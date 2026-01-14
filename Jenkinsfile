@@ -21,7 +21,7 @@ pipeline {
                     docker rm hola-mundo-node || true
 
                     # Ejecutar el contenedor de la aplicación
-                    docker run -d --name hola-mundo-node -p 3000:3000 hola-mundo-node:latest
+                    docker run -d --name hola-mundo-node -p 3001:3000 hola-mundo-node:latest
                 '''
             }
         }
