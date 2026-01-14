@@ -1,18 +1,19 @@
-# Dockerfile
-FROM node:25
+FROM node:20
 
 # Crear directorio de la aplicación
 WORKDIR /usr/src/app
 
-# Copiar archivos al contenedor
+# Copiar archivos de dependencias
 COPY package*.json ./
-COPY index.js .
 
 # Instalar dependencias
 RUN npm install
 
-# Exponer el puerto de la aplicación
+# Copiar el resto del proyecto
+COPY . .
+
+# Exponer el puerto
 EXPOSE 3000
 
-# Comando para iniciar la aplicación
+# Ejecutar la app
 CMD ["node", "index.js"]
