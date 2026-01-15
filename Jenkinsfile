@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     tools {
+        nodejs "Node25"
         dockerTool "Dockertool"
     }
 
@@ -11,6 +12,7 @@ pipeline {
                 sh 'npm install'
             }
         }
+
         stage('Ejecutar tests') {
             steps {
                 sh 'npm test'
