@@ -6,6 +6,16 @@ pipeline {
     }
 
     stages {
+        stage('Instalar dependencias') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Ejecutar tests') {
+            steps {
+                sh 'npm test'
+            }
+        }
 
         stage('Construir Imagen Docker') {
             steps {
